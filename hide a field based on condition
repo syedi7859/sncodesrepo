@@ -1,0 +1,10 @@
+//hide work notes in problem record if the cstate is changed to 102
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+    if (g_form.getValue('state') == '102') {
+        g_form.setDisplay('work_notes', false);
+    } else
+        g_form.setDisplay('work_notes', true);
+}
